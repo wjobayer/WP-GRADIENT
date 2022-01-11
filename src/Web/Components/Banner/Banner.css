@@ -1,0 +1,8 @@
+.cw{
+    height: 84vh;
+}
+@media only screen and (max-width: 600px) {
+    .cw {
+      height: 35vh;
+    }
+  }

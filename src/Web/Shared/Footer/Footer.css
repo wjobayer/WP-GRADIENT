@@ -1,0 +1,28 @@
+.footer{
+    background-color: #0275d8;
+    color:white;
+    padding: 30px 20px;
+}
+.icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 300px;
+    margin: auto;
+
+}
+
+ #button{
+    color:white;
+    background-color: #0397aa;
+    border-color: #0397aa;
+}
+#width{
+    width: 35%;
+    height: 55px;
+}
+@media only screen and (max-width: 600px) {
+    #width {
+      width: 80%;
+    }
+  }

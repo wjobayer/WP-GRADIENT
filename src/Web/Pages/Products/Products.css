@@ -1,0 +1,21 @@
+.product-collection{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+}
+
+
+@media only screen and (max-width: 680px) {
+    .product-collection{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-row-gap: 20px;
+    }
+  }
+@media only screen and (min-width: 681px) and (max-width: 992px) {
+    .product-collection{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 10px;
+    }
+  }
