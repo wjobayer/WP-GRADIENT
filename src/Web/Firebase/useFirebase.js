@@ -58,7 +58,7 @@ const updateName= (name)=> {
   });
 }
   useEffect(()=>{
-    fetch(`https://wpgradient.herokuapp.com/addUserInfo/${user.email}`)
+    fetch(`http://localhost:5000/addUserInfo/${user.email}`)
     .then(res=>res.json())
     .then(data=>setAdmin(data.admin))
   },[user.email])
@@ -74,7 +74,7 @@ const updateName= (name)=> {
  }
 //  console.log(user.email);
  const hanldeUserInfoRegister = (email,name) => {
-  fetch("https://wpgradient.herokuapp.com/addUserInfo", {
+  fetch("http://localhost:5000/addUserInfo", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ email,name }),

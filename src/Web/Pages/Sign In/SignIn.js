@@ -5,7 +5,8 @@ import { Container, Form ,Button} from 'react-bootstrap';
 import { useHistory, useLocation,Link} from 'react-router-dom';
 import useAuth from '../../Firebase/useAuth';
 import './SignIn.css'
-
+import Header from '../../Shared/Header/Header';
+import Footer from '../../Shared/Footer/Footer';
 
 const SignIn = () => {
     const { hanldeUserInfoRegister,signInWithGoogle,setUser ,loginWithEmailAndPassword, setIsLoading} = useAuth();
@@ -73,8 +74,9 @@ const handleGoogleLogin = () => {
 };
     return (
         <div>
-             <Container className="signup-width">
-                <h1 className="display-4">Sign In</h1>
+            <Header></Header>
+             <Container className="signup-width mb-5">
+                <h1 className="display-5 my-4 text-center text-primary">Sign In</h1>
 
                 {/* -----------React Bootstrap Form -----------*/}
                 <Form  onSubmit={handleLoginWithEmailAndPassword}   className="bg-light border rounded w-100 mx-auto left mt-5 mb-5 p-5 text-primary">
@@ -99,6 +101,7 @@ const handleGoogleLogin = () => {
                 </div>
                 {/* ------------end form----------- */}
             </Container>
+            <Footer></Footer>
         </div>
     );
 };

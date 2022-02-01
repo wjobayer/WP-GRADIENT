@@ -5,7 +5,7 @@ import { FormControl, InputGroup,Button } from 'react-bootstrap';
 import './Footer.css'
 const Footer = () => {
     return (
-        <div className="footer">
+        <div className="footer text-center">
             <div className="icon">
             <h4><FontAwesomeIcon icon={faFacebook} /></h4>
             <h4><FontAwesomeIcon icon={faLinkedin} /></h4>

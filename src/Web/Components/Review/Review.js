@@ -7,7 +7,7 @@ const Review = ({product}) => {
     
     return (
         <div className="text-light">
-             <img className="review-img" src={imageURL} alt="" />
+             <img className="review-img mb-4" src={imageURL} alt="" />
             <h6 className="fw-bold">{username}</h6>
             <p className="w-75 mx-auto">{comment}</p>
             <RatingView ratingValue={ratingPoint} /* RatingView Props */ />

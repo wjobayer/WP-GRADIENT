@@ -1,3 +1,5 @@
+import { faArrowRight, faShare } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, Container, Nav, Navbar, NavDropdown, NavItem } from 'react-bootstrap';
 import { Switch } from 'react-router';
@@ -26,7 +28,7 @@ const Dashboard = () => {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Link to="/" className="nav-link">Home</Link>
+      <Link to="/" className="nav-link">EXIT FROM DASHBOARD <FontAwesomeIcon icon={faShare} /></Link>
     </Nav>
     {user?.email ?
                       
@@ -43,17 +45,20 @@ const Dashboard = () => {
            <div className="row my-3">
                 <div className="col-2 bg-primary position-fixed rounded-sidenav ms-0">
                 <div className="">
-                <Link className="nav-link text-light text-left " to={`${url}`}>HOME</Link>
+                <Nav.Link><Link className="nav-link text-light  " to={`${url}`}>HOME</Link>
+                <Link className="nav-link text-light " to={`${url}/mycart`}>BOOKMARK</Link>
+                <Link className="nav-link text-light " to={`${url}/reviews`}>REVIEWS</Link>
+                
+                </Nav.Link>
                 {
                     admin &&<Nav.Link>
-                    <Link className="nav-link text-light " to={`${url}/checkoutallorder`}>CHECKOUT ORDER</Link>
-                    <Link className="nav-link text-light " to={`${url}/manageproducts`}>M. THEMES</Link>
-                    <Link className="nav-link text-light " to={`${url}/addproduct`}>CREATE BLOG</Link>
-                    <Link className="nav-link text-light " to={`${url}/createadmin`}>CREATE ADMIN</Link>
+                    <Link className="nav-link text-warning " to={`${url}/checkoutallorder`}>CHECKOUT</Link>
+                    <Link className="nav-link text-warning " to={`${url}/manageproducts`}>MANAGE</Link>
+                    <Link className="nav-link text-warning " to={`${url}/addproduct`}>CREATE BLOG</Link>
+                    <Link className="nav-link text-warning " to={`${url}/createadmin`}>CREATE ADMIN</Link>
                     </Nav.Link>
                 }
-                <Link className="nav-link text-light " to={`${url}/mycart`}>CART</Link>
-                <Link className="nav-link text-light " to={`${url}/reviews`}>REVIEWS</Link>
+               
                 
                 </div>
                 </div>

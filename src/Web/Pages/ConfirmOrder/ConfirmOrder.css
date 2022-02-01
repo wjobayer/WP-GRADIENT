@@ -8,3 +8,6 @@
     width: 40%;
     margin: 10px;
 }
+.textarea-border{
+    border: 2px solid rgb(96, 96, 250);
+}

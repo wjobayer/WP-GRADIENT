@@ -1,14 +1,15 @@
 import { faShare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Nav, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import galleryone from'../../../images/ins1.png'
 import gallerytwo from'../../../images/ins2.png'
 
 
 const Welcome = () => {
     return (
-        <div>
+        <div className='text-center'>
             <Container>
 
             </Container>
@@ -19,7 +20,7 @@ const Welcome = () => {
                    <div>
                    <h1>Professional WordPress<span className="text-danger">Themes</span></h1>
                     <p className="my-4">Discover the exceptional beauty, quality, and sparkle of our lab grown diamonds.</p>
-                    <button className="btn btn-secondary"><FontAwesomeIcon icon={faShare} /> Explore The Collection</button>
+                    <Nav.Link><Link className="btn btn-primary px-5" to="/products"><FontAwesomeIcon icon={faShare} /> EXPLORE<Link/></Link></Nav.Link>
 
                    </div>
                 </Col>
@@ -29,7 +30,7 @@ const Welcome = () => {
                     <div>
                     <h1>Website Templates for any project </h1>
                     <p className="my-4">Try our online ring builder today! Customise every aspect and create your PERFECT ring!</p>
-                    <button className="btn btn-secondary"><FontAwesomeIcon icon={faShare} /> Explore The Collection</button>
+                    <Nav.Link><Link className="btn btn-primary px-5" to="/products"><FontAwesomeIcon icon={faShare} /> EXPLORE<Link/></Link></Nav.Link>
                     </div>
                     </Col>
                 <Col sm><img  className="w-100" src={gallerytwo} alt="" /></Col>

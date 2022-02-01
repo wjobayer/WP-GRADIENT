@@ -3,9 +3,14 @@
     text-align: left;
 }
 .title-font{
-    font-size: 14px;
+    font-size: 20px;
     text-align: left;
+    font-weight: 700;
 }
 .btn-fs{
     font-size: 10px;
+}
+.scrolling-para{
+    height: 100px;
+    overflow: auto;
 }

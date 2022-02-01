@@ -6,13 +6,13 @@ const ManageProducts = () => {
     const [product , setProduct]=useState([]);
     const [control, setControl] = useState(false);
     useEffect(()=>{
-        fetch('https://wpgradient.herokuapp.com/products')
+        fetch('http://localhost:5000/products')
         .then(res=>res.json())
         .then(data=>setProduct(data))
     },[control]);
 
     const handleDelete = (id) => {
-      fetch(`https://wpgradient.herokuapp.com//${id}`, {
+      fetch(`http://localhost:5000/deleteproduct/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -29,11 +29,11 @@ const ManageProducts = () => {
         <div>
             
             <div className="my-5">
-            <h1 className="text-secondary">Manage Themes Collection</h1>
-            <h6>Total Blog Post: {product.length}</h6>
-            <Table striped bordered hover className="custom-size">
+            <h1 className="text-primary text-center">Manage Themes Collection</h1>
+            <h6 className='text-center text-primary'>Total Blog Post: {product.length}</h6>
+            <Table striped bordered hover className="custom-size ms-5">
         <thead>
-          <tr className="bg-secondary text-light">
+          <tr className="bg-primary text-light">
             <th>S.N</th>
             <th>Themes Name</th>
             <th>Image</th>
@@ -47,12 +47,12 @@ const ManageProducts = () => {
             <tr>
               <td>{index}</td>
               <td>
-                 <p className="title-font">{pd.product_name}</p>
-                 <p className="des-font">Description</p>
-                 <p className="des-font"> {pd.description}</p>
+                 <p className="title-font text-primary">{pd.product_name}</p>
+                 <p className="des-font">{pd.price} $</p>
+                 <p className="des-font scrolling-para">{pd.description}</p>
             </td>
               <td> <img width="150px" className="mx-5" src={pd.img} alt="" /> </td>
-              <td className="fw-lighter"><h6 className="mx-5 title-font">{pd.tag}</h6></td>
+              <td className="fw-lighter"><h6 className="mx-5 text-primary">{pd.tag}</h6></td>
               {/* <td>
                 <input
                   

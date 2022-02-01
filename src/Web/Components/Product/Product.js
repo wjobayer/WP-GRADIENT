@@ -9,7 +9,7 @@ import './Product.css'
 const Product = ({product}) => {
     const{_id,product_name,img,tag,price}=product;
     return (
-        <div>
+        <div className='text-center'>
         <div className="product m-2 p-3">
         <div className='d-flex'>
         <h6 className="text-start text-light m-2 w-50"><span className="py-1 px-2 customround">{tag}</span></h6>

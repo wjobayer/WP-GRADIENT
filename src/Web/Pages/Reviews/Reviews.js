@@ -8,12 +8,12 @@ import Header from '../../Shared/Header/Header';
 const Reviews = () => {
     const [product , setProduct]=useState([]);
     useEffect(()=>{
-        fetch('https://wpgradient.herokuapp.com/reviews')
+        fetch('http://localhost:5000/reviews')
         .then(res=>res.json())
         .then(data=>setProduct(data))
     },[])
     return (
-        <div>
+        <div className='text-center'>
             <Container>
             <h1 className=" text-primary">What Our <span className="fw-light text-danger">Clients Say</span></h1>
             <p className=" mb-5">Welcome to my personal presentation</p>

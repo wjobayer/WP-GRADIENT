@@ -11,14 +11,14 @@ const MyCart = () => {
     const [control, setControl] = useState(false);
   
     useEffect(() => {
-      fetch(`https://wpgradient.herokuapp.com//${user.email}`)
+      fetch(`http://localhost:5000/mycart/${user.email}`)
         .then((res) => res.json())
         .then((data) => setDelivery(data));
     }, [control]);
     console.log(delivery);
   
     const handleDelete = (id) => {
-      fetch(`https://wpgradient.herokuapp.com/deleteorder/${id}`, {
+      fetch(`http://localhost:5000/deleteorder/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -34,9 +34,9 @@ const MyCart = () => {
   
 
     return (
-        <div>
+        <div className='ms-5'>
         <Container className="my-5">
-        <h1 className="my-5 text-secondary">My Orders History</h1>
+        <h1 className="my-5 text-primary text-center">Bookmarked Themes</h1>
    <div className="services">
      <div className="row">
        {delivery?.map((pd) => (
@@ -46,14 +46,14 @@ const MyCart = () => {
                <img className="w-25 mb-3" src={pd?.image} alt="" />
              </div>
 
-             <h4 className="text-secondary title-font">{pd?.name}</h4>
+             <h4 className="text-primary title-font">{pd?.name}</h4>
              <p className="des-font">{pd?.description}</p>
              <div className="d-flex">
-             <h6 className="text-secondary">$ {pd?.price}</h6>
+             <h6 className="text-primary">$ {pd?.price}</h6>
 
              <button
                onClick={() => handleDelete(pd?._id)}
-               className="btn btn-secondary btn-fs mx-auto"
+               className="btn btn-primary btn-fs mx-auto"
              >
                Cancel
              </button>

@@ -15,14 +15,14 @@ const CheckOutAllOrder = () => {
     };
     console.log(status);
     useEffect(() => {
-      fetch("https://wpgradient.herokuapp.com/allorders")
+      fetch("http://localhost:5000/allorders")
         .then((res) => res.json())
         .then((data) => setOrders(data));
     }, []);
   
     // const status = "apporved";
     const handleUpdate = (id) => {
-      fetch(`https://wpgradient.herokuapp.com/updatestatus/${id}`, {
+      fetch(`http://localhost:5000/updatestatus/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ status }),
@@ -37,7 +37,7 @@ const CheckOutAllOrder = () => {
     };
 
     const handleDelete = (id) => {
-      fetch(`https://wpgradient.herokuapp.com/deleteorder/${id}`, {
+      fetch(`http://localhost:5000/deleteorder/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -56,14 +56,14 @@ const CheckOutAllOrder = () => {
     return (
         <div className="my-5 w-100 all-font">
            <Container>
-           <h1 className="text-secondary">All Order From Us</h1>
+           <h1 className="text-primary text-center">Bookmark From User</h1>
             <div className="container">
-      <h5 className="text-secondary">Orders Queue {orders.length}</h5>
+      <h5 className="text-primary text-center">Bookamrks Queue- {orders.length}</h5>
 
       <div>
       <Table striped bordered hover className="custom-size">
         <thead>
-          <tr className="bg-secondary text-light">
+          <tr className="bg-primary text-light">
             <th>S.N</th>
             <th>Themes</th>
             <th>Gallery</th>
@@ -76,8 +76,8 @@ const CheckOutAllOrder = () => {
           <tbody>
             <tr>
               <td>{index}</td>
-              <td>{pd.name}</td>
-              <td><h6 className="text-start text-light m-2"><span className="py-1 px-2 customround">{pd.status}</span></h6> <img width="90px" src={pd.image} alt="" /> </td>
+              <td className="text-primary">{pd.name}</td>
+              <td><img width="90px" src={pd.image} alt="" /> </td>
               <td className="fw-lighter">
 
                 <p>{pd.username}</p>
@@ -90,7 +90,7 @@ const CheckOutAllOrder = () => {
                   onChange={handleStatus}
                   type="text"
                   defaultValue={pd.status}
-                  className="btn btn-outline-secondary"
+                  className="btn btn-outline-primary"
                 />
               </td>
               <div className="d-flex my-5">

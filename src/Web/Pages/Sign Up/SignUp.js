@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { Container, Form ,Button} from 'react-bootstrap';
 import { useHistory, useLocation,Link } from 'react-router-dom';
 import useAuth from '../../Firebase/useAuth';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 import './SignUp.css'
 
 const SignUp = () => {
@@ -78,8 +80,9 @@ const handleGoogleLogin = () => {
 
     return (
         <div>
-            <Container className="signup-width">
-                <h1 className="display-4">Sign Up</h1>
+          <Header></Header>
+            <Container className="signup-width mb-5">
+                <h1 className="display-5 my-4 text-center text-primary">Sign Up</h1>
 
 
                 <Form onSubmit={handleRegistration} className=" bg-light border rounded w-100 mx-auto left mt-5 mb-5 p-5 text-primary">
@@ -109,6 +112,7 @@ const handleGoogleLogin = () => {
                     </h6>
                     </div>
             </Container>
+            <Footer></Footer>
         </div>
     );
 };

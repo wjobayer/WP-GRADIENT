@@ -17,7 +17,7 @@ const CreateReview = () => {
         data.imageURL =user.photoURL;
         console.log(data);
 
-        axios.post('https://wpgradient.herokuapp.com/reviews', data)
+        axios.post('http://localhost:5000/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Successfully Commented');
